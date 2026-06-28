@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://dlgk7ywyn41us"]
+
+[ext_resource type="Script" uid="uid://bvuq245igqp4l" path="res://scripts/main_menu.gd" id="1_0ettg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duh7t"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rktv"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_duh7t"]
+color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ymyu"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+
+[node name="MainMenu" type="Node3D" unique_id=535927768]
+script = ExtResource("1_0ettg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=5244445]
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer" unique_id=1023629393]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -165.0
+offset_right = 240.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="CanvasLayer/MainMenuButtons" unique_id=443895394]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="CanvasLayer/MainMenuButtons" unique_id=348643020]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Multiplayer" type="Button" parent="CanvasLayer/MainMenuButtons" unique_id=1890322187]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Multiplayer
+"
+
+[node name="Quit" type="Button" parent="CanvasLayer/MainMenuButtons" unique_id=1018836650]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit Game"
+
+[node name="JoinLobbyContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=880394928]
+visible = false
+custom_minimum_size = Vector2(960, 540)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lobby_ScrollContainer" type="ScrollContainer" parent="CanvasLayer/JoinLobbyContainer" unique_id=1983703762]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_duh7t")
+
+[node name="Lobby_VBoxContainer" type="VBoxContainer" parent="CanvasLayer/JoinLobbyContainer/Lobby_ScrollContainer" unique_id=1006695247]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer" type="Control" parent="CanvasLayer/JoinLobbyContainer" unique_id=763149177]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/JoinLobbyContainer" unique_id=787423247]
+layout_mode = 2
+alignment = 1
+
+[node name="CreateLobby" type="Button" parent="CanvasLayer/JoinLobbyContainer/Buttons" unique_id=1941462185]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Lobby"
+
+[node name="Refresh" type="Button" parent="CanvasLayer/JoinLobbyContainer/Buttons" unique_id=53157832]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Refresh"
+
+[node name="Back_Join" type="Button" parent="CanvasLayer/JoinLobbyContainer/Buttons" unique_id=1643735532]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="CreateLobbyContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=533690751]
+visible = false
+custom_minimum_size = Vector2(480, 270)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreateLobbyNameLabel" type="Label" parent="CanvasLayer/CreateLobbyContainer" unique_id=1897383899]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lobby Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyNameInput" type="LineEdit" parent="CanvasLayer/CreateLobbyContainer" unique_id=1188425690]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Lobby Name"
+max_length = 32
+
+[node name="LobbyTypes" type="HBoxContainer" parent="CanvasLayer/CreateLobbyContainer" unique_id=1150590885]
+layout_mode = 2
+
+[node name="PublicCheck" type="CheckBox" parent="CanvasLayer/CreateLobbyContainer/LobbyTypes" unique_id=1923454920]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Public"
+
+[node name="PrivateCheck" type="CheckBox" parent="CanvasLayer/CreateLobbyContainer/LobbyTypes" unique_id=904175180]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Private"
+
+[node name="FriendsOnlyCheck" type="CheckBox" parent="CanvasLayer/CreateLobbyContainer/LobbyTypes" unique_id=2094428693]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Friends Only"
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/CreateLobbyContainer" unique_id=842661927]
+layout_mode = 2
+
+[node name="CreateButton" type="Button" parent="CanvasLayer/CreateLobbyContainer/Buttons" unique_id=1064174521]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create
+"
+
+[node name="Back_Create" type="Button" parent="CanvasLayer/CreateLobbyContainer/Buttons" unique_id=819773452]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="LobbyContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=511228592]
+visible = false
+custom_minimum_size = Vector2(1440, 810)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyName" type="Label" parent="CanvasLayer/LobbyContainer" unique_id=970626057]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lobby Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LobbyContainer" unique_id=1299727630]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/LobbyContainer/HBoxContainer" unique_id=1986066242]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.32
+theme_override_styles/panel = SubResource("StyleBoxFlat_7rktv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LobbyContainer/HBoxContainer/PanelContainer" unique_id=405599206]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/LobbyContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=209604980]
+layout_mode = 2
+text = "Players"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/LobbyContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1519865781]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_duh7t")
+
+[node name="PlayerList_VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LobbyContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1509744037]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LobbyChat_ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LobbyContainer/HBoxContainer" unique_id=1730639522]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ymyu")
+horizontal_scroll_mode = 0
+
+[node name="Chat" type="RichTextLabel" parent="CanvasLayer/LobbyContainer/HBoxContainer/LobbyChat_ScrollContainer" unique_id=767257833]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_following = true
+
+[node name="Input_HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LobbyContainer" unique_id=531418216]
+layout_mode = 2
+
+[node name="Input" type="LineEdit" parent="CanvasLayer/LobbyContainer/Input_HBoxContainer" unique_id=1828747835]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_length = 128
+
+[node name="Send" type="Button" parent="CanvasLayer/LobbyContainer/Input_HBoxContainer" unique_id=1557947436]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Send"
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/LobbyContainer" unique_id=1217016732]
+layout_mode = 2
+alignment = 1
+
+[node name="LeaveLobby" type="Button" parent="CanvasLayer/LobbyContainer/Buttons" unique_id=2920329]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Leave Lobby"
+
+[node name="StartGame" type="Button" parent="CanvasLayer/LobbyContainer/Buttons" unique_id=1906537161]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Start Game"
